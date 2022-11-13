@@ -22,6 +22,7 @@ public class BookController {
     public Result getAllBooks(){
         List<Book> books = bookService.getAllBooks();
         int size = bookService.getAllBooks().size();
+        System.out.println("Eddie modify");
         return new Result(size > 0 ? Code.SELECT_OK : Code.SELECT_ERR,books,size > 0 ? "" : "查询失败");
     }
 
@@ -34,19 +35,19 @@ public class BookController {
     @PostMapping("/insertBook")
     public Result insertBook(@RequestBody Book book){
         boolean flag = bookService.insertBook(book);
-        return new Result(flag == true ? Code.SAVE_OK : Code.SAVE_ERR,flag == true ? "添加成功" : "添加失败");
+        return new Result(flag ? Code.SAVE_OK : Code.SAVE_ERR,flag ? "添加成功" : "添加失败");
     }
 
     @PutMapping("/updateBook")
     public Result updateBook(@RequestBody Book book){
         boolean flag = bookService.updateBook(book);
-        return new Result(flag == true ? Code.UPDATE_OK : Code.UPDATE_ERR,flag == true ? "更新成功" : "更新失败");
+        return new Result(flag ? Code.UPDATE_OK : Code.UPDATE_ERR,flag ? "更新成功" : "更新失败");
     }
 
     @DeleteMapping("/deleteBook/{id}")
     public Result deleteBook(@PathVariable Integer id){
         boolean flag = bookService.deleteBook(id);
-        return new Result(flag == true ? Code.DELETE_OK : Code.DELETE_ERR,flag == true ? "删除成功" : "删除失败");
+        return new Result(flag ? Code.DELETE_OK : Code.DELETE_ERR,flag ? "删除成功" : "删除失败");
     }
 
 }
