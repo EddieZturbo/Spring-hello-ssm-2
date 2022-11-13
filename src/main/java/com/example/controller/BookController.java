@@ -23,6 +23,7 @@ public class BookController {
         List<Book> books = bookService.getAllBooks();
         int size = bookService.getAllBooks().size();
         System.out.println("Eddie modify");
+        System.out.println("master-fourth-commit");
         return new Result(size > 0 ? Code.SELECT_OK : Code.SELECT_ERR,books,size > 0 ? "" : "查询失败");
     }
 
