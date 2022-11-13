@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?rewriteBatchedStatements=TRUE
+    username: root
+    password: root
+  thymeleaf:
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
