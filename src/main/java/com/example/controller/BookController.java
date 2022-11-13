@@ -26,6 +26,7 @@ public class BookController {
         System.out.println("master-fourth-commit");
         System.out.println("hot-fix first commit");
         System.out.println("SSH push commit");
+        System.out.println("SSH pull test ");
         return new Result(size > 0 ? Code.SELECT_OK : Code.SELECT_ERR,books,size > 0 ? "" : "查询失败");
     }
 
